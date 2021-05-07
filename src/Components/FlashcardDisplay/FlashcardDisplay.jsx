@@ -20,6 +20,7 @@ const FlashcardDisplay = (props) => {
        <div>
         <Card onClick={() =>flipCard()}>
         {isFront ? props.deck.flashcard_term : props.deck.flashcard_definition}
+        <button onClick ={() => props.changeCard(props.deck.id, props.deck.collection)}>edit card</button>
         
         </Card>
         </div>

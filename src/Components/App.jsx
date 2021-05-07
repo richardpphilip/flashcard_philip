@@ -10,8 +10,8 @@ import { Card, Button, Col, Row, Container } from 'react-bootstrap';
 class App extends Component{
 
     state = {
-        word : '',
-        definition: '',
+        flashcard_term : '',
+        flashcard_definition: '',
         collection : [],
         cards : [],
         collections : [],
@@ -47,14 +47,15 @@ class App extends Component{
             cards : cards.data
         })
     }
-    // async changeCard(id, updatedCollection){
-    //     let updatedTerm = prompt('What is the term you want to change to?')
-    //     let updatedDefintion = prompt('What is the defintion you want to change to?')
-    //     await axios.put(`http://127.0.0.1:8000/flashcard/${id}/`,{
-    //         flashcard_term : updatedTerm,
-    //         flashcard_defintion
-    //     })
-    // }
+    async changeCard(id, updatedCollection){
+        let updatedTerm = prompt('What is the term you want to change to?')
+        let updatedDefintion = prompt('What is the defintion you want to change to?')
+        await axios.put(`http://127.0.0.1:8000/flashcard/${id}/`,{
+            flashcard_term : updatedTerm,
+            flashcard_defintion : updatedDefintion,
+            collection : updatedCollection
+        })
+    }
 
     async getDeck(id){
         let collection = await axios.get(`http://127.0.0.1:8000/flashcard/${id}/`)
@@ -91,7 +92,9 @@ class App extends Component{
         if(this.state.cards.length > 0) {
             console.log(this.state.cards.length)
             return this.state.cards.map(mappedCards => {
-                return <FlashcardDisplay deck = {mappedCards} />
+                return <FlashcardDisplay deck = {mappedCards} 
+                changeCard = {(id, updatedTerm, updatedDefintion, updatedCollection) => this.changeCard(id, updatedTerm, updatedDefintion, updatedCollection)}
+                />
             });
         }
     }
