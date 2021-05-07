@@ -23,7 +23,7 @@ const FlashcardDisplay = (props) => {
 
     return (
        <div>
-        <Card id='flashCard' onClick={() => callTwoFunctions()}>
+        <Card onClick={() => callTwoFunctions()}>
         {isFront ? props.deck.flashcard_term : props.deck.flashcard_definition}
         
         </Card>

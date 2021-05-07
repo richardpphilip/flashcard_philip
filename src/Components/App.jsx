@@ -88,12 +88,12 @@ class App extends Component{
             />
                            <Row>
                 <Col>
-                <div className='scroll' id='scroll'>
+                <div>
             {this.mapCollections()}
             </div>
                 </Col>
                 <Col>
-                <div id='flash' className='card-grid'>
+                <div >
             {this.renderDeck()}
              
             </div>
