@@ -62,7 +62,7 @@ class App extends Component{
             cards: deck
         })
         console.log(this.state.cards)
-        console.log(this.state.cards[0])
+        console.log(this.state.cards.length)
     }
     
     mapCollections(){
@@ -74,6 +74,7 @@ class App extends Component{
             <GetDeck
             collection = {collection}
             getDeck = {(id) => this.getDeck(id)}
+            mapDecks ={this.mapCollections.bind(this)}
             /> 
             )
     }
@@ -106,7 +107,9 @@ class App extends Component{
                 </Col>
                 <Col>
                 <div >
+            Deck Length: {this.state.cards.length}
             {this.renderDeck()}
+           
              
             </div>
                 </Col>

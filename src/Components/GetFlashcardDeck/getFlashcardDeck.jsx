@@ -3,6 +3,10 @@ import { Card } from 'react-bootstrap'
 
 const GetDeck = (props) => {
 
+     function getDeckLength(props){
+        console.log(props.cards)
+    }
+    getDeckLength(props)
     return(
       <div>
         <Card>

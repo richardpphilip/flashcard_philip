@@ -33,7 +33,7 @@ class CreateFlashCard extends Component {
         const card = {
             flashcard_term: this.state.flashcard_term,
             flashcard_definition: this.state.flashcard_definition,
-            collection: this.props.collections[i].id
+            collection_name: this.state.collection
         }
         this.props.addCard(card);
         this.setState({
@@ -89,7 +89,7 @@ class CreateFlashCard extends Component {
     }
     
     renderTitle(){
-        if(this.state.title === ''){
+        if(this.state.collection_name === ''){
             return(
             <Card>
                 <p>First Create the title/subject for the deck of flashcards.
@@ -103,7 +103,8 @@ class CreateFlashCard extends Component {
             return (
             <Card id='addCard'>
              <h3>Add new card to: "{this.state.collection_name}"</h3>
-                    <h3>Card Count: {this.state.deck} {this.props.collections.collection}</h3>
+                    <h3>Card Count: {this.state.deck} {this.props.collections.collection}
+                    Collection ID:{this.state.collection}</h3>
             <div type='container'>
                  <form onSubmit={this.handleCardSubmit}>
 
