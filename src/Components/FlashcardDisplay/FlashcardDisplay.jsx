@@ -11,19 +11,15 @@ const FlashcardDisplay = (props) => {
        console.log('Use Effect running')
    });
 
-   function callTwoFunctions(){
+   function flipCard(){
     setSide(!isFront)
-    if(isFront === true){
-        document.getElementById('flashCard').style.backgroundColor = 'yellow';
-    }
-    if(isFront === false){
-        document.getElementById('flashCard').style.backgroundColor = 'brown';
-    }
+  
 }
 
     return (
        <div>
-        <Card onClick={() => callTwoFunctions()}>
+        <Card onClick={() =>flipCard()}>
+
         {isFront ? props.deck.flashcard_term : props.deck.flashcard_definition}
         
         </Card>
