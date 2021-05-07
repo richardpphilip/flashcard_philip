@@ -70,7 +70,7 @@ class CreateFlashCard extends Component {
                  <form onSubmit={this.handleSubmit}>
 
                         <div>
-                        <label>Title/Subject of Collection</label>
+                        <label>Collection Name</label>
                         <input type='text' name="collection_name" value={this.state.collection_name} onChange={this.handleChange} />
                         </div>
                         <div>
@@ -92,8 +92,7 @@ class CreateFlashCard extends Component {
         if(this.state.collection_name === ''){
             return(
             <Card>
-                <p>First Create the title/subject for the deck of flashcards.
-                 Press ADD button. Then you can add the cards to that collection. Press FINISH if you're done adding cards to this collection.
+                <p>Name the collection you would like to add.  After you will be prompted to add individual cards.
                 </p>
             </Card>
             );
@@ -109,11 +108,11 @@ class CreateFlashCard extends Component {
                  <form onSubmit={this.handleCardSubmit}>
 
                         <div>
-                        <label>Word</label>
+                        <label>Flashcard Term</label>
                         <input type='text' name="flashcard_term" value={this.state.flashcard_term} onChange={this.handleChange} />
                         </div>
                         <div>
-                        <label>Definition</label>
+                        <label>Flashcard Definition</label>
                         <input type='text' name="flashcard_definition" value={this.state.flashcard_definition} onChange={this.handleChange} />
                         </div>
                         <div>
