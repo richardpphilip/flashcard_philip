@@ -19,7 +19,6 @@ const FlashcardDisplay = (props) => {
     return (
        <div>
         <Card onClick={() =>flipCard()}>
-
         {isFront ? props.deck.flashcard_term : props.deck.flashcard_definition}
         
         </Card>

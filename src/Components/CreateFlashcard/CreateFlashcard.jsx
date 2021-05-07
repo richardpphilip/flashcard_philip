@@ -33,7 +33,7 @@ class CreateFlashCard extends Component {
         const card = {
             flashcard_term: this.state.flashcard_term,
             flashcard_definition: this.state.flashcard_definition,
-            collection_name: this.state.collection
+            collection_name: this.state.collection + 1
         }
         this.props.addCard(card);
         this.setState({

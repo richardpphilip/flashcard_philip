@@ -47,6 +47,14 @@ class App extends Component{
             cards : cards.data
         })
     }
+    // async changeCard(id, updatedCollection){
+    //     let updatedTerm = prompt('What is the term you want to change to?')
+    //     let updatedDefintion = prompt('What is the defintion you want to change to?')
+    //     await axios.put(`http://127.0.0.1:8000/flashcard/${id}/`,{
+    //         flashcard_term : updatedTerm,
+    //         flashcard_defintion
+    //     })
+    // }
 
     async getDeck(id){
         let collection = await axios.get(`http://127.0.0.1:8000/flashcard/${id}/`)
@@ -106,7 +114,7 @@ class App extends Component{
             </div>
                 </Col>
                 <Col>
-                <div >
+                <div>
             Deck Length: {this.state.cards.length}
             {this.renderDeck()}
            
