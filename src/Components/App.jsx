@@ -31,6 +31,16 @@ class App extends Component{
         })
     }
 
+    async addCollection(collection){  
+        await axios.post ('http://127.0.0.1:8000/collection/', collection);
+        this.getAllCollections();
+    }
+
+    async addCard(card){
+        await axios.post('http://127.0.0.1:8000/flashcard/', card);
+        this.getDeck(card.collection)
+    }
+
      async getAllCards(){
         let cards = await axios.get('http://127.0.0.1:8000/flashcard/');
         this.setState({
@@ -84,7 +94,9 @@ class App extends Component{
         <Container>
             <CreateFlashCard
             collections= {this.state.collections}
-            mapDecks ={this.mapCollections.bind.this}
+            mapDecks ={this.mapCollections.bind(this)}
+            addCard = {this.addCard.bind(this)}
+            addCollection = {this.addCollection.bind(this)}
             />
                            <Row>
                 <Col>

@@ -6,9 +6,9 @@ class CreateFlashCard extends Component {
     constructor(props){
         super(props);
         this.state = { 
-            title: '',
-            word: '',
-            definition: '',
+           collection_name: '',
+            flashcard_term: '',
+            flashcard_definition: '',
             collection: '',
             deck: 0,
             didAdd: false,
@@ -31,8 +31,8 @@ class CreateFlashCard extends Component {
         event.preventDefault();
         let i = this.props.collections.length -1
         const card = {
-            word: this.state.word,
-            definition: this.state.definition,
+            flashcard_term: this.state.flashcard_term,
+            flashcard_definition: this.state.flashcard_definition,
             collection: this.props.collections[i].id
         }
         this.props.addCard(card);
@@ -46,7 +46,7 @@ class CreateFlashCard extends Component {
     handleSubmit(event) {
         event.preventDefault();
         const collection = {
-            title: this.state.title,
+            collection_name: this.state.collection_name,
            
 
         }
@@ -71,7 +71,7 @@ class CreateFlashCard extends Component {
 
                         <div>
                         <label>Title/Subject of Collection</label>
-                        <input type='text' name="title" value={this.state.title} onChange={this.handleChange} />
+                        <input type='text' name="collection_name" value={this.state.collection_name} onChange={this.handleChange} />
                         </div>
                         <div>
                       <input type='submit' value='Add' />
@@ -102,18 +102,18 @@ class CreateFlashCard extends Component {
         if(this.state.didAdd === true){
             return (
             <Card id='addCard'>
-             <h3>Add new card to: "{this.state.title}"</h3>
+             <h3>Add new card to: "{this.state.collection_name}"</h3>
                     <h3>Card Count: {this.state.deck} {this.props.collections.collection}</h3>
             <div type='container'>
                  <form onSubmit={this.handleCardSubmit}>
 
                         <div>
                         <label>Word</label>
-                        <input type='text' name="word" value={this.state.word} onChange={this.handleChange} />
+                        <input type='text' name="flashcard_term" value={this.state.flashcard_term} onChange={this.handleChange} />
                         </div>
                         <div>
                         <label>Definition</label>
-                        <input type='text' name="definition" value={this.state.definition} onChange={this.handleChange} />
+                        <input type='text' name="flashcard_definition" value={this.state.flashcard_definition} onChange={this.handleChange} />
                         </div>
                         <div>
                       <input type='submit' value='Add' />
