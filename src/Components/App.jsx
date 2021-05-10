@@ -52,7 +52,7 @@ class App extends Component{
         let updatedDefinition = prompt('What is the defintion you want to change to?')
         await axios.put(`http://127.0.0.1:8000/flashcard/${id}/`,{
             flashcard_term : updatedTerm,
-            flashcard_defintion : updatedDefinition,
+            flashcard_definition : updatedDefinition,
         })
         this.getDeck(updatedCollection)
     }
