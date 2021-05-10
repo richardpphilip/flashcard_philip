@@ -49,12 +49,12 @@ class App extends Component{
     }
     async changeCard(id, updatedCollection){
         let updatedTerm = prompt('What is the term you want to change to?')
-        let updatedDefintion = prompt('What is the defintion you want to change to?')
+        let updatedDefinition = prompt('What is the defintion you want to change to?')
         await axios.put(`http://127.0.0.1:8000/flashcard/${id}/`,{
             flashcard_term : updatedTerm,
-            flashcard_defintion : updatedDefintion,
-            collection : updatedCollection
+            flashcard_defintion : updatedDefinition,
         })
+        this.getDeck(updatedCollection)
     }
 
     async getDeck(id){
@@ -93,7 +93,7 @@ class App extends Component{
             console.log(this.state.cards.length)
             return this.state.cards.map(mappedCards => {
                 return <FlashcardDisplay deck = {mappedCards} 
-                changeCard = {(id, updatedTerm, updatedDefintion, updatedCollection) => this.changeCard(id, updatedTerm, updatedDefintion, updatedCollection)}
+                changeCard = {(id, updatedTerm, updatedDefinition) => this.changeCard(id, updatedTerm, updatedDefinition)}
                 />
             });
         }

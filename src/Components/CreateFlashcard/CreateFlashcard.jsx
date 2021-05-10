@@ -64,9 +64,9 @@ class CreateFlashCard extends Component {
         return (
          
                
-            <Card>
+            <Card className= 'creator' >
             <p>Create Collection</p>
-            <div type='container'>
+            <div>
                  <form onSubmit={this.handleSubmit}>
 
                         <div>
@@ -74,7 +74,7 @@ class CreateFlashCard extends Component {
                         <input type='text' name="collection_name" value={this.state.collection_name} onChange={this.handleChange} />
                         </div>
                         <div>
-                      <input type='submit' value='Add' />
+                      <input type='submit' value='Click here to Add' />
                       </div>
                 </form>
                 </div>
@@ -101,10 +101,9 @@ class CreateFlashCard extends Component {
         if(this.state.didAdd === true){
             return (
             <Card id='addCard'>
-             <h3>Add new card to: "{this.state.collection_name}"</h3>
-                    <h3>Card Count: {this.state.deck} {this.props.collections.collection}
-                    Collection ID:{this.state.collection}</h3>
-            <div type='container'>
+             <p>Add new card to: "{this.state.collection_name}"</p>
+                    <p>Card Count: {this.state.deck} {this.props.collections.collection}</p>
+            <div>
                  <form onSubmit={this.handleCardSubmit}>
 
                         <div>
