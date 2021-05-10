@@ -111,7 +111,7 @@ class App extends Component{
             addCollection = {this.addCollection.bind(this)}
             />
                            <Row>
-                <Col>
+                <Col sm={8}>
                 <div>
             {this.mapCollections()}
             </div>

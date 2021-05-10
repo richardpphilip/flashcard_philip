@@ -9,7 +9,7 @@ const GetDeck = (props) => {
     getDeckLength(props)
     return(
       <div>
-        <Card>
+        <Card className='deck'>
         {props.collection.collection_name}   {props.collection.id}
         <button onClick={() => props.getDeck(props.collection.id)}> get the Deck </button>
        </Card>
