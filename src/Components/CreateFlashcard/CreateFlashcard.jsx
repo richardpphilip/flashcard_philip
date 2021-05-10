@@ -100,7 +100,7 @@ class CreateFlashCard extends Component {
         }
         if(this.state.didAdd === true){
             return (
-            <Card id='addCard'>
+            <Card>
              <p>Add new card to: "{this.state.collection_name}"</p>
                     <p>Card Count: {this.state.deck} {this.props.collections.collection}</p>
             <div>
@@ -119,7 +119,7 @@ class CreateFlashCard extends Component {
                       </div>
                 </form>
                 </div>
-                <button id='finish' onClick={() => this.setDidAdd()}> Finish  </button>
+                <button  onClick={() => this.setDidAdd()}> Finish  </button>
                 </Card>
             );
 
@@ -130,7 +130,7 @@ class CreateFlashCard extends Component {
     render(){
   
         return (
-            <div id='createFlashCard'>
+            <div >
                 <hr />
                
                     {this.renderIntro()}

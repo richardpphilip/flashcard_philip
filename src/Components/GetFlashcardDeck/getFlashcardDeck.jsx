@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 
 const GetDeck = (props) => {
 
@@ -11,7 +11,7 @@ const GetDeck = (props) => {
       <div>
         <Card className='deck'>
         {props.collection.collection_name} 
-        <button onClick={() => props.getDeck(props.collection.id)}> get the Deck </button>
+        <Button variant ="secondary" size="sm" onClick={() => props.getDeck(props.collection.id)}> get the Deck </Button>
        </Card>
       </div>  
     );

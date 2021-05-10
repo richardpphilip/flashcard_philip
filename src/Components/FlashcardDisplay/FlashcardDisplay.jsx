@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 
 const FlashcardDisplay = (props) => {
@@ -23,7 +23,7 @@ const FlashcardDisplay = (props) => {
         <div >
         <Card className ='flashcard' onClick={() =>flipCard()}>
         {isFront ? props.deck.flashcard_term : props.deck.flashcard_definition}
-        <button onClick ={() => props.changeCard(props.deck.id, props.deck.collection_name)}>edit card</button>
+        <Button variant ="secondary" size="sm"  onClick ={() => props.changeCard(props.deck.id, props.deck.collection_name)}>Edit</Button>
         
         </Card>
         </div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import GetDeck from './GetFlashcardDeck/getFlashcardDeck'
 import FlashcardDisplay from './FlashcardDisplay/FlashcardDisplay';
 import CreateFlashCard from './CreateFlashcard/CreateFlashcard';
-import { Card, Button, Col, Row, Container } from 'react-bootstrap';
+import {  Col, Row, Container } from 'react-bootstrap';
 
 
 
@@ -118,7 +118,7 @@ class App extends Component{
                 </Col>
                 <Col>
                 <div>
-            Deck Length: {this.state.cards.length}
+            <center>Deck Length: {this.state.cards.length}</center>
             {this.renderDeck()}
            
              
