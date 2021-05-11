@@ -71,7 +71,9 @@ class App extends Component{
             cards: deck
         })
         console.log(this.state.cards)
+
         console.log(this.state.cards.length)
+        console.log(this.state.collections)
     }
     
     mapCollections(){
@@ -90,7 +92,7 @@ class App extends Component{
 
     renderDeck(){
         if(this.state.cards.length > 0) {
-            console.log(this.state.cards.length)
+            console.log(this.state.cards)
             return this.state.cards.map(mappedCards => {
                 return <FlashcardDisplay deck = {mappedCards} 
                 changeCard = {(id, updatedTerm, updatedDefinition) => this.changeCard(id, updatedTerm, updatedDefinition)}

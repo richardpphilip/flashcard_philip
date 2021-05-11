@@ -9,7 +9,7 @@ const FlashcardDisplay = (props) => {
 
    useEffect(() =>{
        console.log('Use Effect running')
-       console.log(props.deck.id)
+       console.log(props)
        console.log(props.changeCard.updatedDefinition)
        console.log(props.changeCard.updatedTerm)
    });
@@ -23,7 +23,7 @@ const FlashcardDisplay = (props) => {
         <div >
         <Card className ='flashcard' onClick={() =>flipCard()}>
         {isFront ? props.deck.flashcard_term : props.deck.flashcard_definition}
-        <Button variant ="secondary" size="sm"  onClick ={() => props.changeCard(props.deck.id, props.deck.collection_name)}>Edit</Button>
+        <Button variant ="secondary" size="sm" n  onClick ={() => props.changeCard(props.deck.id, props.deck.collection_name)}>Edit</Button>
         
         </Card>
         </div>
