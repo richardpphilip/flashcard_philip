@@ -29,7 +29,6 @@ class CreateFlashCard extends Component {
 
     handleCardSubmit(event){
         event.preventDefault();
-        let i = this.props.collections.length -1
         const card = {
             flashcard_term: this.state.flashcard_term,
             flashcard_definition: this.state.flashcard_definition,
