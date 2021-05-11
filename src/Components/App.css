@@ -17,6 +17,13 @@
 
 .creator{
     text-align: center;
+    background-color: blanchedalmond;
+    font-weight: bold;
+}
+
+.instruction{
+    text-align: center;
+    padding: 20px;
 }
 
 

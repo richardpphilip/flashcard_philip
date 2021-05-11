@@ -90,7 +90,7 @@ class CreateFlashCard extends Component {
     renderTitle(){
         if(this.state.collection_name === ''){
             return(
-            <Card>
+            <Card className= 'instruction'>
                 <p>Name the collection you would like to add.  After you will be prompted to add individual cards.
                 </p>
             </Card>
@@ -99,7 +99,7 @@ class CreateFlashCard extends Component {
         }
         if(this.state.didAdd === true){
             return (
-            <Card>
+            <Card className='creator'>
              <p>Add new card to: "{this.state.collection_name}"</p>
                     <p>Card Count: {this.state.deck} {this.props.collections.collection}</p>
             <div>
